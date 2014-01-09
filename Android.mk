@@ -36,7 +36,7 @@ my_src_files_arm := \
 			arm/filter_neon_intrinsics.c
 
 
-common_CFLAGS := -std=gnu89 #-fvisibility=hidden ## -fomit-frame-pointer
+common_CFLAGS := #-fvisibility=hidden ## -fomit-frame-pointer
 
 ifeq ($(HOST_OS),windows)
 	ifeq ($(USE_MINGW),)
@@ -79,7 +79,7 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 # =====================================================
 
 include $(CLEAR_VARS)
-LOCAL_CLANG := true
+#LOCAL_CLANG := true
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_CFLAGS += $(common_CFLAGS) -ftrapv
 LOCAL_CFLAGS_arm := $(my_cflags_arm)
@@ -101,7 +101,7 @@ include $(BUILD_STATIC_LIBRARY)
 # =====================================================
 
 include $(CLEAR_VARS)
-LOCAL_CLANG := true
+# LOCAL_CLANG := true
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_CFLAGS += $(common_CFLAGS) -ftrapv
 LOCAL_CFLAGS_arm := $(my_cflags_arm)
@@ -126,7 +126,7 @@ include $(BUILD_SHARED_LIBRARY)
 # =====================================================
 
 include $(CLEAR_VARS)
-LOCAL_CLANG := true
+#LOCAL_CLANG := true
 LOCAL_C_INCLUDES:= $(common_C_INCLUDES) external/zlib
 LOCAL_SRC_FILES:= pngtest.c
 LOCAL_MODULE := pngtest
