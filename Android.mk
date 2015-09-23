@@ -48,8 +48,8 @@ ifeq ($(HOST_OS),windows)
 endif
 
 ifeq ($(HOST_OS),darwin)
-common_CFLAGS += -no-integrated-as
-common_ASFLAGS += -no-integrated-as
+ # common_CFLAGS += -no-integrated-as
+ # common_ASFLAGS += -no-integrated-as
 endif
 
 common_C_INCLUDES +=
